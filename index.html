@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Mintlify – Documentation Clone</title>
+
+<style>
+
+:root{
+  --green:#18E299;
+  --green-soft:#90ECC5;
+  --dark:#08090B;
+  --muted:#6b7280;
+  --light:#f8fafc;
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+  color:var(--dark);
+  background:white;
+}
+
+/* ---------------- NAV ---------------- */
+
+header{
+  position:absolute;
+  width:100%;
+  top:0;
+  left:0;
+  z-index:10;
+}
+
+.navbar{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:18px 64px;
+  color:white;
+}
+
+.nav-left{
+  display:flex;
+  align-items:center;
+  gap:28px;
+}
+
+.nav-left img{
+  height:26px;
+}
+
+.nav-left a{
+  color:white;
+  text-decoration:none;
+  font-size:14px;
+}
+
+.nav-right{
+  display:flex;
+  gap:14px;
+}
+
+.nav-right a{
+  text-decoration:none;
+  font-size:14px;
+}
+
+.btn-outline{
+  color:white;
+}
+
+.btn-primary{
+  background:white;
+  color:var(--dark);
+  padding:8px 14px;
+  border-radius:999px;
+  font-weight:bold;
+}
+
+/* ---------------- HERO ---------------- */
+
+.hero{
+  height:560px;
+  background:
+    linear-gradient(180deg,#0b4f6c 0%, #0f766e 100%);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  position:relative;
+  overflow:hidden;
+}
+
+.hero img.banner{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  opacity:.55;
+  mix-blend-mode:screen;
+}
+
+.hero-content{
+  position:relative;
+  z-index:2;
+  max-width:760px;
+  color:white;
+}
+
+.badge{
+  display:inline-flex;
+  gap:8px;
+  align-items:center;
+  background:rgba(255,255,255,.15);
+  padding:6px 12px;
+  border-radius:999px;
+  font-size:12px;
+  margin-bottom:20px;
+}
+
+.badge span:first-child{
+  background:var(--green);
+  color:#062d1f;
+  padding:2px 8px;
+  border-radius:999px;
+  font-weight:bold;
+  font-size:11px;
+}
+
+.hero h1{
+  font-size:48px;
+  margin-bottom:14px;
+}
+
+.hero p{
+  font-size:18px;
+  margin-bottom:26px;
+}
+
+.hero-form{
+  display:flex;
+  justify-content:center;
+}
+
+.hero-form input{
+  width:260px;
+  padding:12px 14px;
+  border:none;
+  outline:none;
+  border-radius:999px 0 0 999px;
+}
+
+.hero-form button{
+  border:none;
+  padding:12px 18px;
+  border-radius:0 999px 999px 0;
+  background:white;
+  font-weight:bold;
+  cursor:pointer;
+}
+
+/* ---------------- DOCS PREVIEW ---------------- */
+
+.docs{
+  background:var(--light);
+  margin-top:-90px;
+  border-radius:24px 24px 0 0;
+  padding:60px 80px;
+  display:grid;
+  grid-template-columns:260px 1fr 220px;
+  gap:40px;
+}
+
+/* left */
+
+.left{
+  font-size:14px;
+}
+
+.brand{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  margin-bottom:16px;
+  font-weight:bold;
+}
+
+.brand img{
+  height:22px;
+}
+
+.left ul{
+  list-style:none;
+}
+
+.left li{
+  padding:8px 10px;
+  border-radius:8px;
+  cursor:pointer;
+}
+
+.left li.active{
+  background:#e8faf4;
+  font-weight:bold;
+}
+
+/* center */
+
+.tabs{
+  display:flex;
+  gap:18px;
+  border-bottom:1px solid #e5e7eb;
+  margin-bottom:20px;
+  font-size:14px;
+}
+
+.tabs span{
+  padding-bottom:10px;
+  color:var(--muted);
+}
+
+.tabs span.active{
+  color:var(--dark);
+  font-weight:bold;
+  border-bottom:2px solid var(--green);
+}
+
+.sub{
+  font-size:12px;
+  color:var(--green);
+  font-weight:bold;
+  margin-bottom:6px;
+}
+
+.title{
+  font-size:26px;
+  margin-bottom:6px;
+}
+
+.desc{
+  color:var(--muted);
+  margin-bottom:26px;
+}
+
+.cards{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:24px;
+}
+
+.card{
+  height:140px;
+  background:white;
+  border:1px solid #e5e7eb;
+  border-radius:14px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:14px;
+  color:var(--muted);
+}
+
+/* right */
+
+.right h4{
+  font-size:13px;
+  color:var(--muted);
+  margin-bottom:10px;
+}
+
+.right ul{
+  list-style:none;
+  font-size:14px;
+}
+
+.right li{
+  padding:6px 0;
+}
+
+
+.features{
+  padding:80px;
+}
+
+.row{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:60px;
+  align-items:center;
+  margin-bottom:80px;
+}
+
+.row img{
+  width:100%;
+  border-radius:16px;
+}
+
+.row p{
+  color:var(--muted);
+  margin-top:10px;
+}
+
+.assistant{
+  padding:80px;
+  background:var(--light);
+  display:grid;
+  grid-template-columns:1fr 1.2fr;
+  gap:60px;
+  align-items:center;
+}
+
+.assistant img{
+  width:100%;
+  border-radius:18px;
+}
+
+.enterprise{
+  padding:80px;
+}
+
+.enterprise p{
+  color:var(--muted);
+  margin-top:8px;
+}
+
+.grid{
+  margin-top:40px;
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:24px;
+}
+
+.box{
+  background:white;
+  border:1px solid #e5e7eb;
+  border-radius:14px;
+  padding:22px;
+}
+
+.box p{
+  margin-top:8px;
+}
+
+
+.cta{
+  padding:90px 60px;
+  text-align:center;
+}
+
+.cta p{
+  color:var(--muted);
+  margin-top:12px;
+}
+
+.cta a{
+  display:inline-block;
+  margin:20px 8px 0;
+  text-decoration:none;
+  padding:8px 16px;
+  border-radius:999px;
+  font-weight:bold;
+}
+
+.cta .primary{
+  background:var(--green);
+  color:#062d1f;
+}
+
+.cta .secondary{
+  border:1px solid #d1d5db;
+  color:var(--dark);
+}
+
+
+
+footer{
+  background:var(--dark);
+  color:white;
+  padding:80px;
+  display:grid;
+  grid-template-columns:repeat(5,1fr);
+  gap:40px;
+  font-size:14px;
+}
+
+footer a{
+  color:#cbd5e1;
+  text-decoration:none;
+  display:block;
+  margin-bottom:8px;
+}
+
+</style>
+</head>
+<body>
+
+<header>
+  <div class="navbar">
+
+    <div class="nav-left">
+      <img src="assets/logo.png">
+      <a href="#">Resources</a>
+      <a href="#">Documentation</a>
+      <a href="#">Customers</a>
+      <a href="#">Blog</a>
+      <a href="#">Pricing</a>
+    </div>
+
+    <div class="nav-right">
+      <a class="btn-outline" href="#">Contact sales</a>
+      <a class="btn-primary" href="#">Start for free</a>
+    </div>
+
+  </div>
+</header>
+
+<section class="hero">
+
+  <img class="banner" src="assets/banner.jpg">
+
+  <div class="hero-content">
+
+    <div class="badge">
+      <span>NEW</span>
+      <span>Self-updating docs with agent suggestions</span>
+    </div>
+
+    <h1>The Intelligent Knowledge Platform</h1>
+    <p>Turn your company’s knowledge into accurate, agent-ready context</p>
+
+    <div class="hero-form">
+      <input type="email" placeholder="Email address">
+      <button>Start now</button>
+    </div>
+
+  </div>
+
+</section>
+
+<section class="docs">
+
+  <aside class="left">
+
+    <div class="brand">
+      <img src="assets/icon.jpg">
+      <span>mintlify</span>
+    </div>
+
+    <ul>
+      <li>Ask Assistant</li>
+      <li class="active">Quickstart</li>
+      <li>Global settings</li>
+      <li>AI optimization</li>
+      <li>Components</li>
+      <li>Themes</li>
+    </ul>
+
+  </aside>
+
+  <div>
+
+    <div class="tabs">
+      <span class="active">Guides</span>
+      <span>API Reference</span>
+      <span>Changelog</span>
+    </div>
+
+    <div class="sub">Getting Started</div>
+    <div class="title">Quickstart Guide</div>
+    <div class="desc">Start building intelligent documentation in under five minutes</div>
+
+    <div class="cards">
+      <div class="card">Card</div>
+      <div class="card">Card</div>
+      <div class="card">Card</div>
+    </div>
+
+  </div>
+
+  <aside class="right">
+
+    <h4>On this page</h4>
+    <ul>
+      <li>Introduction</li>
+      <li>Getting started</li>
+      <li>AI optimization</li>
+      <li>Themes</li>
+    </ul>
+
+  </aside>
+
+</section>
+
+<section class="features">
+
+  <div class="row">
+    <div>
+      <h2>Beautiful developer documentation</h2>
+      <p>Build visually appealing documentation that lives next to your codebase.</p>
+    </div>
+    <img src="assets/banner.jpg">
+  </div>
+
+  <div class="row">
+    <img src="assets/banner.jpg">
+    <div>
+      <h2>Optimized for performance</h2>
+      <p>Fast, searchable and user-friendly documentation out of the box.</p>
+    </div>
+  </div>
+
+</section>
+
+<section class="assistant">
+
+  <div>
+    <h2>AI enabled assistant</h2>
+    <p>Let users instantly get answers directly from your documentation.</p>
+  </div>
+
+  <img src="assets/banner.jpg">
+
+</section>
+
+<section class="enterprise">
+
+  <h2>Enterprise ready documentation platform</h2>
+  <p>Security, compliance and scalability built in.</p>
+
+  <div class="grid">
+
+    <div class="box">
+      <h4>Security</h4>
+      <p>Enterprise grade access control.</p>
+    </div>
+
+    <div class="box">
+      <h4>Compliance</h4>
+      <p>Built for industry requirements.</p>
+    </div>
+
+    <div class="box">
+      <h4>Scalability</h4>
+      <p>Designed for growing teams.</p>
+    </div>
+
+    <div class="box">
+      <h4>Analytics</h4>
+      <p>Out of the box insights.</p>
+    </div>
+
+  </div>
+
+</section>
+
+<section class="cta">
+
+  <h2>Start building world-class documentation with Mintlify</h2>
+  <p>Take your documentation experience to the next level.</p>
+
+  <a class="primary" href="#">Start for free</a>
+  <a class="secondary" href="#">Contact sales</a>
+
+</section>
+
+<footer>
+
+  <div>
+    <h4>Product</h4>
+    <a href="#">Documentation</a>
+    <a href="#">Features</a>
+    <a href="#">Pricing</a>
+  </div>
+
+  <div>
+    <h4>Company</h4>
+    <a href="#">About</a>
+    <a href="#">Customers</a>
+    <a href="#">Careers</a>
+  </div>
+
+  <div>
+    <h4>Resources</h4>
+    <a href="#">Blog</a>
+    <a href="#">Changelog</a>
+    <a href="#">Support</a>
+  </div>
+
+  <div>
+    <h4>Legal</h4>
+    <a href="#">Privacy</a>
+    <a href="#">Terms</a>
+  </div>
+
+  <div>
+    © 2026 Mintlify
+  </div>
+
+</footer>
+
+</body>
+</html>
