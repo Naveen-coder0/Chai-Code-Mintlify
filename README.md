@@ -1,46 +1,53 @@
-# Mintlify Documentation Clone
+# Mintlify Landing Page Clone
 
-A responsive web-based documentation site inspired by Mintlify's design. This project features a modern landing page with a navigation bar, hero section, and documentation preview layout.
+A full-featured clone of the Mintlify landing page showcasing an intelligent knowledge platform built for both humans and AI. This project demonstrates a modern, responsive web application with multiple sections, feature cards, and interactive elements.
 
 ## Features
 
-- **Responsive Navigation Bar** - Clean header with logo and navigation links
-- **Hero Section** - Eye-catching banner with a search input field
-- **Documentation Preview** - Multi-column layout showcasing documentation structure
-- **Modern Styling** - Custom CSS with a professional color scheme using green accents
-- **Mobile-Friendly** - Responsive design that adapts to different screen sizes
+- **Responsive Navigation Bar** - Clean header with logo, navigation links, and CTA buttons
+- **Hero Section** - Eye-catching banner with "The Intelligent Knowledge Platform" headline and email signup
+- **Feature Cards** - Multiple sections highlighting AI integration, knowledge management, and user assistance
+- **Enterprise Section** - Dedicated area for enterprise offerings and services
+- **Partnership & Compliance Info** - Details about white-glove support and security compliance
+- **Customer Showcase** - Display of companies using the platform
+- **Call-to-Action Sections** - Multiple CTA buttons encouraging sign-ups and demos
+- **Footer** - Comprehensive footer with navigation links and social media
+- **Responsive Design** - Fully responsive layout that adapts to different screen sizes
 
 ## Project Structure
 
 ```
 .
-├── index.html          # Main HTML file with all content and styling
-├── assets/             # Asset folder containing images
-│   ├── banner.jpg      # Hero section banner image
-│   ├── icon.jpg        # Icon assets
-│   └── logo.png        # Site logo
-└── README.md           # This file
+├── index.html              # Main HTML file with page structure
+├── style.css               # All styling and responsive design
+├── mintlify-wordmark.svg   # Logo asset
+├── companies.png           # Companies badge/image
+├── c1.png, c2.png         # Feature card images
+├── bcard.png              # Large card image
+├── story.png              # Story section image
+└── README.md              # This file
 ```
 
-## Color Scheme
+## Key Sections
 
-- **Primary Green** - `#18E299`
-- **Soft Green** - `#90ECC5`
-- **Dark Background** - `#08090B`
-- **Muted Text** - `#6b7280`
-- **Light Background** - `#f8fafc`
+1. **Page 1** - Hero section with navigation, headline, CTA, and featured image
+2. **Page 2** - Feature cards highlighting AI capabilities and knowledge management
+3. **Enterprise** - Enterprise offerings and partnership benefits
+4. **Industry Showcase** - Featured customer logos (Perplexity, X, Kalshi)
+5. **Footer** - Navigation links, resources, and legal information
 
 ## Getting Started
 
 1. Open `index.html` in your web browser
-2. No additional dependencies or build steps required
-3. All styling is included in the HTML file
+2. No build steps or dependencies required
+3. All functionality is implemented with vanilla HTML and CSS
 
 ## Technologies Used
 
 - HTML5
 - CSS3
-- Responsive Design
+- Responsive Layout with Flexbox
+- Background images and gradients
 
 ## License
 
